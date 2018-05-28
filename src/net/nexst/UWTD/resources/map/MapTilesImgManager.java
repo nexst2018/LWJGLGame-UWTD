@@ -7,7 +7,7 @@ import net.nexst.UWTD.resources.TileImgResource;
 import net.nexst.UWTD.resources.TilesXMLDataResource;
 
 /**
- * 每一个MapTilesImgManager负责管理一个材质，
+ * 每一个MapTilesImgManager负责管理一个地图的材质，
  * 该类实质是封装多个TileImgResource对象
  * @see TileImgResource
  * 
@@ -39,7 +39,7 @@ public class MapTilesImgManager
 	 * @return 返回TileImgResource材质对象
 	 * */
 	public TileImgResource getImg(int id)
-	{
+	{	
 		return imgMap.get(id);
 	}
 }

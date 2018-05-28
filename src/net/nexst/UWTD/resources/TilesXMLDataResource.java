@@ -3,14 +3,8 @@
  */
 package net.nexst.UWTD.resources;
 
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import javax.imageio.ImageIO;
 
 /**
  * 储存贴图XML信息资源，一般与MapXMLDataResource联动
@@ -30,7 +24,6 @@ public class TilesXMLDataResource extends XMLDataResource
 	private int tileRows;// y
 
 	private String imgSourcePath;
-
 
 	private ImgResource imgResource;
 
@@ -75,8 +68,8 @@ public class TilesXMLDataResource extends XMLDataResource
 			{
 				HashMap<String, String> parametersMap = this.getTagParameters(i);
 				imgSourcePath = parametersMap.get("source");
-//				imgHeight = Integer.parseInt(parametersMap.get("width"));
-//				imgWidth = Integer.parseInt(parametersMap.get("height"));
+				// imgHeight = Integer.parseInt(parametersMap.get("width"));
+				// imgWidth = Integer.parseInt(parametersMap.get("height"));
 				endAt = i;
 				break;
 			}
@@ -146,6 +139,26 @@ public class TilesXMLDataResource extends XMLDataResource
 	public TileImgResource[][] getTilesSet()
 	{
 		return tilesSet;
+	}
+
+	public int getTileWidth()
+	{
+		return tileWidth;
+	}
+
+	public int getTileHeight()
+	{
+		return tileHeight;
+	}
+
+	public int getTileColumns()
+	{
+		return tileColumns;
+	}
+
+	public int getTileRows()
+	{
+		return tileRows;
 	}
 
 }
