@@ -1,9 +1,7 @@
-import java.io.File;
 import java.io.IOException;
 
-import javax.imageio.ImageIO;
-
 import net.nexst.UWTD.resources.MapXMLDataResource;
+import net.nexst.UWTD.resources.map.MapRendererHelper;
 
 public class Tester
 {
@@ -14,10 +12,26 @@ public class Tester
 		int x = 9;
 		int y = 15;
 		MapXMLDataResource mxdr = new MapXMLDataResource("res/mapsData/Maps/Demo.tmx");
+		MapRendererHelper mrh = new MapRendererHelper(mxdr);
 
-		File outputfile = new File("res/image.png");
-		ImageIO.write(mxdr.getLayer(layer).getTileImgResource(x, y).getBufferedImage(), "png", outputfile);
+		System.out.println(mxdr.getLayer(0).getLayerWidth());
+		float[] result = mrh.getVertex(mrh.getBufferedImage(1)[0], 1);
+		for (int i = 0; i < result.length; i++)
+		{
+			if (i % 8 == 0)
+				System.out.println();
+			System.out.println(result[i]);
 
+		}
+
+		// BufferedImage[] imageArr = mrh.getBufferedImage(1);
+
+		// for (int i = 0; i < imageArr.length; i++)
+		// {
+		// File outputfile = new File("res/image" + i + ".png");
+		// ImageIO.write(imageArr[i], "png", outputfile);
+
+		// }
 		// TilesXMLDataResource tmdr = new
 		// TilesXMLDataResource("res/mapsData/TilesData/OutsideBlocks1.tsx");
 		// System.out.println();
